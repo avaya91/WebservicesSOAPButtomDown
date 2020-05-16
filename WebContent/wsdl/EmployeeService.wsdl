@@ -4,34 +4,37 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://srvs.imcs.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="deleteEmployeeInfo">
+   <element name="updateEmployeeInfo">
     <complexType>
      <sequence>
       <element name="empId" type="xsd:string"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="emailId" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="deleteEmployeeInfoResponse">
+   <element name="updateEmployeeInfoResponse">
     <complexType>
      <sequence>
-      <element name="deleteEmployeeInfoReturn" type="xsd:string"/>
+      <element name="updateEmployeeInfoReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="deleteEmployeeInfoRequest">
+   <wsdl:message name="updateEmployeeInfoRequest">
 
-      <wsdl:part element="impl:deleteEmployeeInfo" name="parameters">
+      <wsdl:part element="impl:updateEmployeeInfo" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="deleteEmployeeInfoResponse">
+   <wsdl:message name="updateEmployeeInfoResponse">
 
-      <wsdl:part element="impl:deleteEmployeeInfoResponse" name="parameters">
+      <wsdl:part element="impl:updateEmployeeInfoResponse" name="parameters">
 
       </wsdl:part>
 
@@ -39,13 +42,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="EmployeeService">
 
-      <wsdl:operation name="deleteEmployeeInfo">
+      <wsdl:operation name="updateEmployeeInfo">
 
-         <wsdl:input message="impl:deleteEmployeeInfoRequest" name="deleteEmployeeInfoRequest">
+         <wsdl:input message="impl:updateEmployeeInfoRequest" name="updateEmployeeInfoRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:deleteEmployeeInfoResponse" name="deleteEmployeeInfoResponse">
+         <wsdl:output message="impl:updateEmployeeInfoResponse" name="updateEmployeeInfoResponse">
 
        </wsdl:output>
 
@@ -57,17 +60,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="deleteEmployeeInfo">
+      <wsdl:operation name="updateEmployeeInfo">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="deleteEmployeeInfoRequest">
+         <wsdl:input name="updateEmployeeInfoRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="deleteEmployeeInfoResponse">
+         <wsdl:output name="updateEmployeeInfoResponse">
 
             <wsdlsoap:body use="literal"/>
 

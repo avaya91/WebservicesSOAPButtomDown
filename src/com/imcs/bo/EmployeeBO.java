@@ -32,4 +32,13 @@ public class EmployeeBO {
 			
 		} 
 	}
+	
+	public void updateEmployeeInfo(String empId, String firstName, String lastName, String emailId) throws Exception {
+
+		if (empId != null && empId.trim().length() > 0) {
+			EmployeeDAO dao = new EmployeeDAO();
+			dao.updateEmployeeInfo(empId, firstName, lastName, emailId);
+			
+		} 
+	}
 }

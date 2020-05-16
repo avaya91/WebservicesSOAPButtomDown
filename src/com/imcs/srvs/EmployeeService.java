@@ -21,7 +21,7 @@ public class EmployeeService {
 		}
 		return empDto;
 	}
-	
+
 	public String addEmployeeInfo(String empId, String firstName, String lastName, String emailId) {
 		try {
 
@@ -36,7 +36,7 @@ public class EmployeeService {
 		}
 		return "Successfully Added";
 	}
-	
+
 	public String deleteEmployeeInfo(String empId) {
 		try {
 
@@ -51,5 +51,21 @@ public class EmployeeService {
 		}
 		return "Successfully Deleted";
 	}
+	
+	public String updateEmployeeInfo(String empId, String firstName, String lastName, String emailId) {
+		try {
+
+			if (empId != null && empId.trim().length() > 0) {
+				EmployeeBO bo = new EmployeeBO();
+				bo.updateEmployeeInfo(empId, firstName, lastName, emailId);
+			} else {
+				System.out.println("Ivalid input from the client");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return "Successfully Added";
+	}
+
 
 }
