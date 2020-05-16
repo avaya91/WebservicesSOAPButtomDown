@@ -36,5 +36,20 @@ public class EmployeeService {
 		}
 		return "Successfully Added";
 	}
+	
+	public String deleteEmployeeInfo(String empId) {
+		try {
+
+			if (empId != null && empId.trim().length() > 0) {
+				EmployeeBO bo = new EmployeeBO();
+				bo.deleteEmployeeInfo(empId);
+			} else {
+				System.out.println("Ivalid input from the client");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return "Successfully Deleted";
+	}
 
 }

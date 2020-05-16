@@ -24,4 +24,12 @@ public class EmployeeBO {
 			
 		} 
 	}
+	public void deleteEmployeeInfo(String empId) throws Exception {
+
+		if (empId != null && empId.trim().length() > 0) {
+			EmployeeDAO dao = new EmployeeDAO();
+			dao.deleteEmployeeInfo(empId);
+			
+		} 
+	}
 }

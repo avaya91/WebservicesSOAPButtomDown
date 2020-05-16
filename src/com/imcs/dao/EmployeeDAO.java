@@ -66,6 +66,23 @@ public class EmployeeDAO {
 			ex.printStackTrace();
 		}
 	}
+	
+	public void deleteEmployeeInfo(String empId) throws Exception {
+		Connection con = null;
+		int employeeID = Integer.parseInt(empId);
+		try {
+			con=getConnection();
+			PreparedStatement psmt = con.prepareStatement("delete employees where employee_id=?");
+			psmt.setInt(1, employeeID);
+			int result = psmt.executeUpdate();
+			con.commit();
+			System.out.println("No of Records Deleted: " + result);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	
 	private Connection getConnection() throws Exception {
 		Connection con = null;
 		PropertiesHelper props = null;

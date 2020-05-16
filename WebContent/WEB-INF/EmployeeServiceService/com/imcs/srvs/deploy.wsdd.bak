@@ -20,13 +20,10 @@
       <parameter name="className" value="com.imcs.srvs.EmployeeServiceSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="EmployeeService"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="addEmployeeInfo" qname="operNS:addEmployeeInfo" xmlns:operNS="http://srvs.imcs.com" returnQName="retNS:addEmployeeInfoReturn" xmlns:retNS="http://srvs.imcs.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      <operation name="deleteEmployeeInfo" qname="operNS:deleteEmployeeInfo" xmlns:operNS="http://srvs.imcs.com" returnQName="retNS:deleteEmployeeInfoReturn" xmlns:retNS="http://srvs.imcs.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:empId" xmlns:pns="http://srvs.imcs.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:firstName" xmlns:pns="http://srvs.imcs.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:lastName" xmlns:pns="http://srvs.imcs.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:emailId" xmlns:pns="http://srvs.imcs.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="addEmployeeInfo"/>
+      <parameter name="allowedMethods" value="deleteEmployeeInfo"/>
 
   </service>
 </deployment>
