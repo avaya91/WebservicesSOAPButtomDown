@@ -5,16 +5,18 @@
   <service name="EmployeeService" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://srvs.imcs.com"/>
       <parameter name="wsdlServiceElement" value="EmployeeServiceService"/>
-      <parameter name="schemaQualified" value="http://srvs.imcs.com,http://dto.imcs.com"/>
+      <parameter name="schemaQualified" value="http://srvs.imcs.com"/>
       <parameter name="wsdlServicePort" value="EmployeeService"/>
       <parameter name="className" value="com.imcs.srvs.EmployeeService"/>
       <parameter name="wsdlPortType" value="EmployeeService"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://srvs.imcs.com" xmlns:retNS="http://srvs.imcs.com" xmlns:rtns="http://dto.imcs.com" name="getEmployeeInfo" qname="operNS:getEmployeeInfo" returnQName="retNS:getEmployeeInfoReturn" returnType="rtns:EmployeeDTO" soapAction="">
+      <operation xmlns:operNS="http://srvs.imcs.com" xmlns:retNS="http://srvs.imcs.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addEmployeeInfo" qname="operNS:addEmployeeInfo" returnQName="retNS:addEmployeeInfoReturn" returnType="rtns:string" soapAction="">
         <parameter xmlns:pns="http://srvs.imcs.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:empId" type="tns:string"/>
+        <parameter xmlns:pns="http://srvs.imcs.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:firstName" type="tns:string"/>
+        <parameter xmlns:pns="http://srvs.imcs.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lastName" type="tns:string"/>
+        <parameter xmlns:pns="http://srvs.imcs.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:emailId" type="tns:string"/>
       </operation>
-      <parameter name="allowedMethods" value="getEmployeeInfo"/>
+      <parameter name="allowedMethods" value="addEmployeeInfo"/>
 
-      <typeMapping xmlns:ns="http://dto.imcs.com" qname="ns:EmployeeDTO" type="java:com.imcs.dto.EmployeeDTO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

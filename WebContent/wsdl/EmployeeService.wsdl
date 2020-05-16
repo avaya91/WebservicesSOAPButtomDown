@@ -1,48 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions targetNamespace="http://srvs.imcs.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://srvs.imcs.com" xmlns:intf="http://srvs.imcs.com" xmlns:tns1="http://dto.imcs.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:definitions targetNamespace="http://srvs.imcs.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://srvs.imcs.com" xmlns:intf="http://srvs.imcs.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <!--WSDL created by Apache Axis version: 1.4
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://srvs.imcs.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <import namespace="http://dto.imcs.com"/>
-   <element name="getEmployeeInfo">
+   <element name="addEmployeeInfo">
     <complexType>
      <sequence>
       <element name="empId" type="xsd:string"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="emailId" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="getEmployeeInfoResponse">
+   <element name="addEmployeeInfoResponse">
     <complexType>
      <sequence>
-      <element name="getEmployeeInfoReturn" type="tns1:EmployeeDTO"/>
+      <element name="addEmployeeInfoReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-  </schema>
-  <schema elementFormDefault="qualified" targetNamespace="http://dto.imcs.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <complexType name="EmployeeDTO">
-    <sequence>
-     <element name="email" nillable="true" type="xsd:string"/>
-     <element name="empId" nillable="true" type="xsd:string"/>
-     <element name="firstName" nillable="true" type="xsd:string"/>
-     <element name="lastName" nillable="true" type="xsd:string"/>
-    </sequence>
-   </complexType>
   </schema>
  </wsdl:types>
 
-   <wsdl:message name="getEmployeeInfoResponse">
+   <wsdl:message name="addEmployeeInfoRequest">
 
-      <wsdl:part element="impl:getEmployeeInfoResponse" name="parameters">
+      <wsdl:part element="impl:addEmployeeInfo" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="getEmployeeInfoRequest">
+   <wsdl:message name="addEmployeeInfoResponse">
 
-      <wsdl:part element="impl:getEmployeeInfo" name="parameters">
+      <wsdl:part element="impl:addEmployeeInfoResponse" name="parameters">
 
       </wsdl:part>
 
@@ -50,13 +42,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    <wsdl:portType name="EmployeeService">
 
-      <wsdl:operation name="getEmployeeInfo">
+      <wsdl:operation name="addEmployeeInfo">
 
-         <wsdl:input message="impl:getEmployeeInfoRequest" name="getEmployeeInfoRequest">
+         <wsdl:input message="impl:addEmployeeInfoRequest" name="addEmployeeInfoRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:getEmployeeInfoResponse" name="getEmployeeInfoResponse">
+         <wsdl:output message="impl:addEmployeeInfoResponse" name="addEmployeeInfoResponse">
 
        </wsdl:output>
 
@@ -68,17 +60,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="getEmployeeInfo">
+      <wsdl:operation name="addEmployeeInfo">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="getEmployeeInfoRequest">
+         <wsdl:input name="addEmployeeInfoRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="getEmployeeInfoResponse">
+         <wsdl:output name="addEmployeeInfoResponse">
 
             <wsdlsoap:body use="literal"/>
 

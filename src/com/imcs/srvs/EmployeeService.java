@@ -14,12 +14,27 @@ public class EmployeeService {
 				EmployeeBO bo = new EmployeeBO();
 				empDto = bo.getEmployeeInfo(empId);
 			} else {
-				System.out.println("Ivalid inpur from the client");
+				System.out.println("Ivalid input from the client");
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		return empDto;
+	}
+	
+	public String addEmployeeInfo(String empId, String firstName, String lastName, String emailId) {
+		try {
+
+			if (empId != null && empId.trim().length() > 0) {
+				EmployeeBO bo = new EmployeeBO();
+				bo.addEmployeeInfo(empId, firstName, lastName, emailId);
+			} else {
+				System.out.println("Ivalid input from the client");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return "Successfully Added";
 	}
 
 }

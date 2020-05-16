@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -33,18 +33,20 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="EmployeeService" provider="java:RPC" style="wrapped" use="literal">
-  <ns3:operation name="getEmployeeInfo" qname="ns1:getEmployeeInfo" returnQName="ns1:getEmployeeInfoReturn" returnType="ns2:EmployeeDTO" soapAction="" xmlns:ns1="http://srvs.imcs.com" xmlns:ns2="http://dto.imcs.com" xmlns:ns3="http://xml.apache.org/axis/wsdd/">
-   <ns3:parameter qname="ns1:empId" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-  </ns3:operation>
-  <ns1:parameter name="allowedMethods" value="getEmployeeInfo"/>
+  <ns2:operation name="addEmployeeInfo" qname="ns1:addEmployeeInfo" returnQName="ns1:addEmployeeInfoReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://srvs.imcs.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:empId" type="xsd:string"/>
+   <ns2:parameter qname="ns1:firstName" type="xsd:string"/>
+   <ns2:parameter qname="ns1:lastName" type="xsd:string"/>
+   <ns2:parameter qname="ns1:emailId" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:parameter name="allowedMethods" value="addEmployeeInfo"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="EmployeeService"/>
   <ns1:parameter name="className" value="com.imcs.srvs.EmployeeService"/>
   <ns1:parameter name="wsdlServicePort" value="EmployeeService"/>
-  <ns1:parameter name="schemaQualified" value="http://srvs.imcs.com,http://dto.imcs.com"/>
+  <ns1:parameter name="schemaQualified" value="http://srvs.imcs.com"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://srvs.imcs.com"/>
   <ns1:parameter name="wsdlServiceElement" value="EmployeeServiceService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns3:EmployeeDTO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:com.imcs.dto.EmployeeDTO" xmlns:ns3="http://dto.imcs.com"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
